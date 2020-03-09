@@ -27,26 +27,24 @@
 const axios = require("axios");
 const inquirer = require("inquirer");
 
-getGithubUserData();
+getGithubData();
 
-
-async function getGithubUserData() {
+async function getGithubData() {
     try {
-        // const { user } = await inquirer.prompt({
+        // const { username } = await inquirer.prompt({
         //     message: "Enter your Github username:",
-        //     name: "user"
+        //     name: "username"
         // });
 
-        let user = 'robcruz';
-        console.log('username', user)
-        const { data } = await axios.get(`https://api.github.com/users/${user}/events/public`);
+        let username = 'robcruz';
+        console.log('username', username);
+        const { data } = await axios.get(`https://api.github.com/users/${username}/events/public`);
 
-
-        // console.log(config);
         const array = [];
-        var avatarUrl;
-        var email;
-        data.forEach((element, index) => {
+        let avatarUrl;
+        let email;
+
+        data.forEach((element) => {
             let { actor, repo, payload } = element;
 
             if (!email) email = payload.commits[0].author.email;
