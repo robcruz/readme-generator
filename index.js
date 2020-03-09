@@ -32,28 +32,36 @@ getGithubUserData();
 
 async function getGithubUserData() {
     try {
-        const { user } = await inquirer.prompt({
-            message: "Enter your Github username:",
-            name: "user"
-        });
+        // const { user } = await inquirer.prompt({
+        //     message: "Enter your Github username:",
+        //     name: "user"
+        // });
 
+        let user = 'robcruz';
         console.log('username', user)
         const { data } = await axios.get(`https://api.github.com/users/${user}/events/public`);
 
 
         // console.log(config);
         const array = [];
-        let avatarUrl;
+        var avatarUrl;
+        var email;
         data.forEach((element, index) => {
-            if (index === 0) { avatarUrl = element.actor.avatar_url }
-            let repo = element.repo.name.split("/").pop();
-            if (!array.includes(repo)) { array.push(repo) }
+            let { actor, repo, payload } = element;
+
+            if (!email) email = payload.commits[0].author.email;
+
+            if (!avatarUrl) avatarUrl = actor.avatar_url;
+
+            let repoName = repo.name.split("/").pop();
+            if (!array.includes(repoName)) { array.push(repoName) }
 
         });
         // console.log("===================================================================================== end")
 
         console.log("array", array);
         console.log("avatarUrl", avatarUrl);
+        console.log("email", email);
 
     } catch (err) {
         console.log(err);
