@@ -10,8 +10,8 @@
 //     The README will be populated with the following:
 //
 //     At least one badge
-// Project title
-// Description
+// Project title - done
+// Description - done
 // Table of Contents
 // Installation
 // Usage
@@ -19,8 +19,8 @@
 // Contributing
 // Tests
 // Questions
-// User GitHub profile picture
-// User GitHub email
+// User GitHub profile picture - done
+// User GitHub email - done
 
 // The user will be prompted for their GitHub username, which will be used to make a call to the GitHub API
 // to retrieve their email and profile image. They will then be prompted with questions about their project.
@@ -39,7 +39,6 @@ try {
     //     name: "username"
     // });
 
-
     axios.get(`https://api.github.com/users/${username}`)
         .then(response => {
             // console.log('response.data)', response.data);
@@ -55,13 +54,38 @@ try {
             }
             readMe += `#### Github Repositories:\n`;
 
+        })
+        .catch(err => {
+            console.log()
+        })
+        .finally(() => {
             addNewReadme(readMe);
             console.log(readMe);
         });
 
+    const repos = [];
     axios.get(`https://api.github.com/users/${username}/repos`)
         .then(response => {
-            console.log('response.data', response.data);
+            let { data } = response;
+            let { name, description, url, owner } = data;
+
+            response.data.forEach(repo => {
+                let { name, html_url, description, owner } = repo;
+                readMe += ``;
+                readMe += ``;
+                readMe += ``;
+                readMe += ``;
+                readMe += ``;
+                readMe += ``;
+                readMe += ``;
+                readMe += ``;
+                console.log('name', name);
+                console.log('html_url', html_url);
+                console.log('description', description);
+                let { login, avatar_url } = owner;
+                console.log('login', login);
+                console.log('avatar_url', avatar_url);
+            })
 
 
             // readMe += `# ${data.name}\n`;
@@ -76,7 +100,10 @@ try {
         })
         .catch(err => {
             console.log(err);
-        })
+        }).finally(() => {
+        console.log('repos', repos);
+
+    })
 
 } catch (err) {
     console.log(err);
