@@ -29,87 +29,159 @@ const axios = require("axios");
 const inquirer = require("inquirer");
 const fs = require("fs");
 
-let readMe = "";
-let username = 'robcruz';
-console.log('username', username);
+createReadMe();
 
-try {
-    // const { username } = await inquirer.prompt({
-    //     message: "Enter your Github username:",
-    //     name: "username"
-    // });
 
-    axios.get(`https://api.github.com/users/${username}`)
-        .then(response => {
-            // console.log('response.data)', response.data);
-            readMe += `# ${response.data.name}\n`;
-            readMe += `![${response.data.name}](${response.data.avatar_url})\n`;
-            readMe += `#### URL: [${response.data.html_url}](${response.data.html_url})\n`;
-            readMe += `#### Username: ${response.data.login}\n`;
-            if (response.data.company) {
-                readMe += `#### Company: ${response.data.company}\n`;
-            }
-            if (response.data.email) {
-                readMe += `#### Email: ${response.data.email}\n`;
-            }
-            readMe += `#### Github Repositories:\n`;
 
-        })
-        .catch(err => {
-            console.log()
-        })
-        .finally(() => {
-            addNewReadme(readMe);
-            console.log(readMe);
+//  At least one badge
+//  Project title
+//  Description
+//  Table of Contents
+//  Installation
+//  Usage
+//  License
+//  Contributing
+//  Tests
+//  Questions
+//  User GitHub profile picture
+//  User GitHub email
+
+const varToString = varObj => Object.keys(varObj)[0]
+
+async function createReadMe() {
+    let readMe;
+
+    try {
+        let { username } = await inquirer.prompt({
+            message: "Enter your Github username:",
+            name: "username"
         });
 
-    const repos = [];
-    axios.get(`https://api.github.com/users/${username}/repos`)
-        .then(response => {
-            let { data } = response;
-            let { name, description, url, owner } = data;
+        // let username = 'robcruz';
 
-            response.data.forEach(repo => {
-                let { name, html_url, description, owner } = repo;
-                readMe += ``;
-                readMe += ``;
-                readMe += ``;
-                readMe += ``;
-                readMe += ``;
-                readMe += ``;
-                readMe += ``;
-                readMe += ``;
-                console.log('name', name);
-                console.log('html_url', html_url);
-                console.log('description', description);
-                let { login, avatar_url } = owner;
-                console.log('login', login);
-                console.log('avatar_url', avatar_url);
-            })
+        // fetch user data on Github
+        let response = await axios.get(`https://api.github.com/users/${username}`);
+        let { name, avatar_url, html_url, login, company, email } = response.data;
+
+        readMe = `# ${name}\n`;
+        readMe += `![${name}](${avatar_url})\n`;
+        readMe += `#### URL: [${html_url}](${html_url})\n`;
+        readMe += `#### Username: ${login}\n`;
+        if (company) {
+            readMe += `#### Company: ${company}\n`;
+        }
+        if (email) {
+            readMe += `#### Email: ${email}\n`;
+        }
+        readMe += `#### Github Repositories:\n\n`;
+        readMe += '---\n';
+
+        // fetch user repos on Github
+        response = await axios.get(`https://api.github.com/users/${username}/repos`);
+
+        //  Project title
+        //  Description
+
+        //  At least one badge
+        //  Table of Contents - XXXXXXX
+        //  Installation - XXXXXXX
+        //  Usage - XXXXXXX
+        //  License - XXXXXXX
+        //  Contributing - XXXXXXX
+        //  Tests - XXXXXXX
+        //  Questions - XXXXXXX
+        //  User GitHub profile picture
+        //  User GitHub email
 
 
-            // readMe += `# ${data.name}\n`;
-            // readMe += `![${data.name}](${data.avatar_url})\n`;
-            // readMe += `#### URL: [${data.html_url}](${data.html_url})\n`;
-            // readMe += `#### Github Username: ${data.login}\n`;
-            // // readMe += `#### Email: ${email}\n`;
-            // readMe += `#### Github Repositories:\n`;
-            //
-            // addNewReadme(readMe);
-            // console.log(readMe);
-        })
-        .catch(err => {
-            console.log(err);
-        }).finally(() => {
-        console.log('repos', repos);
 
-    })
+        for (const repo of response.data) {
+            let { name, html_url, description, owner, license } = repo;
+            let { login } = owner;
+            readMe += `* ### ${name}\n`;
+            readMe += `    * Description: ${description}\n`;
+            readMe += `    * Email: ${email}\n`;
+            readMe += `    * HTML URL: ${html_url}\n`;
+            readMe += `    * Owner:\n`;
+            readMe += `         * Login: ${login}\n`;
 
-} catch (err) {
-    console.log(err);
+            if (license) {
+                readMe += `    * License:\n`;
+                readMe += `         * Name: ${license.name}\n`;
+            }
+
+            let tableOfContents = await inquirer.prompt({
+                message: "Table of Contents:",
+                name: "tableOfContents"
+            });
+            readMe += `    * Table of contents: ${tableOfContents}\n`;
+
+            let installation = await inquirer.prompt({
+                message: "Installation:",
+                name: "installation"
+            });
+            readMe += `    * Installation: ${installation}\n`;
+
+            let usage = await inquirer.prompt({
+                message: "Usage:",
+                name: "usage"
+            });
+            readMe += `    * Usage: ${usage}\n`;
+
+            let tests = await inquirer.prompt({
+                message: "Tests:",
+                name: "tests"
+            });
+            readMe += `    * Tests: ${tests}\n`;
+
+
+            // let tableOfContents = 'Table of contents';
+
+
+            // readMe += ``;
+            // readMe += ``;
+            // readMe += ``;
+            // readMe += ``;
+            // readMe += ``;
+            // readMe += ``;
+            // readMe += ``;
+            // readMe += ``;
+            // console.log('name', name);
+            // console.log('html_url', html_url);
+            // console.log('description', description);
+            // let { login, avatar_url } = owner;
+            // console.log('login', login);
+            // console.log('avatar_url', avatar_url);
+        }
+
+
+        // readMe += `# ${data.name}\n`;
+        // readMe += `![${data.name}](${data.avatar_url})\n`;
+        // readMe += `#### URL: [${data.html_url}](${data.html_url})\n`;
+        // readMe += `#### Github Username: ${data.login}\n`;
+        // // readMe += `#### Email: ${email}\n`;
+        // readMe += `#### Github Repositories:\n`;
+        //
+        // addNewReadme(readMe);
+        // console.log(readMe);
+
+    } catch (err) {
+        console.log(err);
+    } finally {
+        addNewReadme(readMe);
+        console.log(readMe);
+    }
+
 }
 
+async function promptUser(message) {
+    let { input } = await inquirer.prompt({
+        message: message,
+        name: "input"
+    });
 
+    return input
+}
 
 function addNewReadme(str) {
     fs.writeFile("README.md", `${str}\n`, err => {
@@ -133,7 +205,7 @@ function appendToReadMe(str) {
 
 // axios.get(`https://api.github.com/users/${username}`)
 //     .then(response => {
-//         let data = response.data;
+//         let data = data;
 //         readMe += `# ${data.name}\n`;
 //         readMe += `![${data.name}](${data.avatar_url})\n`;
 //         readMe += `#### URL: [${data.html_url}](${data.html_url})\n`;
