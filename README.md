@@ -13,30 +13,30 @@
          * Login: robcruz
     * License:
          * Name: The Unlicense
-    * Table of contents: 
-    * Installation: [object Object]
-    * Usage: [object Object]
-    * Tests: [object Object]
+    * Table of contents: advanced-react-workshop
+    * Installation: just do it
+    * Usage: click it
+    * Tests: no test
 * ### code-quiz
     * Description: Unit 04 Web APIs Homework: Code Quiz
     * Email: null
     * HTML URL: https://github.com/robcruz/code-quiz
     * Owner:
          * Login: robcruz
-    * Table of contents: 
-    * Installation: [object Object]
-    * Usage: [object Object]
-    * Tests: [object Object]
+    * Table of contents:  code-quiz
+    * Installation: no 
+    * Usage: no
+    * Tests: yes
 * ### day-planner
     * Description: null
     * Email: null
     * HTML URL: https://github.com/robcruz/day-planner
     * Owner:
          * Login: robcruz
-    * Table of contents: 
-    * Installation: [object Object]
-    * Usage: [object Object]
-    * Tests: [object Object]
+    * Table of contents: none
+    * Installation: no
+    * Usage: no
+    * Tests: yes
 * ### intro-to-react-workshop
     * Description: A low level introduction to React and some of the most common concepts of component-driven development and testing
     * Email: null
@@ -45,10 +45,10 @@
          * Login: robcruz
     * License:
          * Name: The Unlicense
-    * Table of contents: 
-    * Installation: [object Object]
-    * Usage: [object Object]
-    * Tests: [object Object]
+    * Table of contents: no
+    * Installation: no
+    * Usage: 
+    * Tests: 
 * ### password-generator
     * Description: Unit 03 JavaScript Homework: Password Generator
     * Email: null
@@ -56,9 +56,9 @@
     * Owner:
          * Login: robcruz
     * Table of contents: 
-    * Installation: [object Object]
-    * Usage: [object Object]
-    * Tests: [object Object]
+    * Installation: 
+    * Usage: 
+    * Tests: 
 * ### readme-generator
     * Description: null
     * Email: null
@@ -66,9 +66,9 @@
     * Owner:
          * Login: robcruz
     * Table of contents: 
-    * Installation: [object Object]
-    * Usage: [object Object]
-    * Tests: [object Object]
+    * Installation: 
+    * Usage: 
+    * Tests: 
 * ### robcruz.github.io
     * Description: null
     * Email: null
@@ -76,9 +76,9 @@
     * Owner:
          * Login: robcruz
     * Table of contents: 
-    * Installation: [object Object]
-    * Usage: [object Object]
-    * Tests: [object Object]
+    * Installation: 
+    * Usage: 
+    * Tests: 
 * ### testrail-runner
     * Description: null
     * Email: null
@@ -86,9 +86,9 @@
     * Owner:
          * Login: robcruz
     * Table of contents: 
-    * Installation: [object Object]
-    * Usage: [object Object]
-    * Tests: [object Object]
+    * Installation: 
+    * Usage: 
+    * Tests: 
 * ### updated-portfolio-page
     * Description: Updated Portfolio Page
     * Email: null
@@ -96,9 +96,9 @@
     * Owner:
          * Login: robcruz
     * Table of contents: 
-    * Installation: [object Object]
-    * Usage: [object Object]
-    * Tests: [object Object]
+    * Installation: 
+    * Usage: 
+    * Tests: 
 * ### weather-dashboard
     * Description: Unit 06 Server-Side APIs Homework: Weather Dashboard
     * Email: null
@@ -106,7 +106,7 @@
     * Owner:
          * Login: robcruz
     * Table of contents: 
-    * Installation: [object Object]
-    * Usage: [object Object]
-    * Tests: [object Object]
+    * Installation: 
+    * Usage: 
+    * Tests: 
 
