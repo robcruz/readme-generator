@@ -112,25 +112,25 @@ async function createReadMe() {
 
             console.log('Repository: ', name);
 
-            let tableOfContents = await inquirer.prompt({
+            let { tableOfContents } = await inquirer.prompt({
                 message: "Table of Contents:",
                 name: "tableOfContents"
             });
-            readMe += `    * Table of contents: ${ tableOfContents }\n`;
+            readMe += `    * Table of contents: ${ tableOfContents.toString() }\n`;
 
-            let installation = await inquirer.prompt({
+            let { installation } = await inquirer.prompt({
                 message: "Installation:",
                 name: "installation"
             });
-            readMe += `    * Installation: ${installation}\n`;
+            readMe += `    * Installation: ${ installation.toString() }\n`;
 
-            let usage = await inquirer.prompt({
+            let { usage } = await inquirer.prompt({
                 message: "Usage:",
                 name: "usage"
             });
             readMe += `    * Usage: ${usage}\n`;
 
-            let tests = await inquirer.prompt({
+            let { tests } = await inquirer.prompt({
                 message: "Tests:",
                 name: "tests"
             });

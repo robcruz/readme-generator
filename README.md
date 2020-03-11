@@ -13,7 +13,7 @@
          * Login: robcruz
     * License:
          * Name: The Unlicense
-    * Table of contents: [object Object]
+    * Table of contents: 
     * Installation: [object Object]
     * Usage: [object Object]
     * Tests: [object Object]
@@ -23,7 +23,7 @@
     * HTML URL: https://github.com/robcruz/code-quiz
     * Owner:
          * Login: robcruz
-    * Table of contents: [object Object]
+    * Table of contents: 
     * Installation: [object Object]
     * Usage: [object Object]
     * Tests: [object Object]
@@ -33,7 +33,7 @@
     * HTML URL: https://github.com/robcruz/day-planner
     * Owner:
          * Login: robcruz
-    * Table of contents: [object Object]
+    * Table of contents: 
     * Installation: [object Object]
     * Usage: [object Object]
     * Tests: [object Object]
@@ -45,7 +45,7 @@
          * Login: robcruz
     * License:
          * Name: The Unlicense
-    * Table of contents: [object Object]
+    * Table of contents: 
     * Installation: [object Object]
     * Usage: [object Object]
     * Tests: [object Object]
@@ -55,7 +55,7 @@
     * HTML URL: https://github.com/robcruz/password-generator
     * Owner:
          * Login: robcruz
-    * Table of contents: [object Object]
+    * Table of contents: 
     * Installation: [object Object]
     * Usage: [object Object]
     * Tests: [object Object]
@@ -65,7 +65,7 @@
     * HTML URL: https://github.com/robcruz/readme-generator
     * Owner:
          * Login: robcruz
-    * Table of contents: [object Object]
+    * Table of contents: 
     * Installation: [object Object]
     * Usage: [object Object]
     * Tests: [object Object]
@@ -75,7 +75,7 @@
     * HTML URL: https://github.com/robcruz/robcruz.github.io
     * Owner:
          * Login: robcruz
-    * Table of contents: [object Object]
+    * Table of contents: 
     * Installation: [object Object]
     * Usage: [object Object]
     * Tests: [object Object]
@@ -85,7 +85,7 @@
     * HTML URL: https://github.com/robcruz/testrail-runner
     * Owner:
          * Login: robcruz
-    * Table of contents: [object Object]
+    * Table of contents: 
     * Installation: [object Object]
     * Usage: [object Object]
     * Tests: [object Object]
@@ -95,7 +95,7 @@
     * HTML URL: https://github.com/robcruz/updated-portfolio-page
     * Owner:
          * Login: robcruz
-    * Table of contents: [object Object]
+    * Table of contents: 
     * Installation: [object Object]
     * Usage: [object Object]
     * Tests: [object Object]
@@ -105,7 +105,7 @@
     * HTML URL: https://github.com/robcruz/weather-dashboard
     * Owner:
          * Login: robcruz
-    * Table of contents: [object Object]
+    * Table of contents: 
     * Installation: [object Object]
     * Usage: [object Object]
     * Tests: [object Object]
