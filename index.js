@@ -31,21 +31,6 @@ const fs = require("fs");
 
 createReadMe();
 
-
-
-//  At least one badge
-//  Project title
-//  Description
-//  Table of Contents
-//  Installation
-//  Usage
-//  License
-//  Contributing
-//  Tests
-//  Questions
-//  User GitHub profile picture
-//  User GitHub email
-
 const varToString = varObj => Object.keys(varObj)[0]
 
 async function createReadMe() {
@@ -78,22 +63,6 @@ async function createReadMe() {
 
         // fetch user repos on Github
         response = await axios.get(`https://api.github.com/users/${username}/repos`);
-
-        //  Project title
-        //  Description
-
-        //  At least one badge
-        //  Table of Contents - XXXXXXX
-        //  Installation - XXXXXXX
-        //  Usage - XXXXXXX
-        //  License - XXXXXXX
-        //  Contributing - XXXXXXX
-        //  Tests - XXXXXXX
-        //  Questions - XXXXXXX
-        //  User GitHub profile picture
-        //  User GitHub email
-
-
 
         for (const repo of response.data) {
             let { name, html_url, description, owner, license } = repo;
@@ -164,57 +133,3 @@ function appendToReadMe(str) {
 }
 
 
-
-
-// axios.get(`https://api.github.com/users/${username}`)
-//     .then(response => {
-//         let data = data;
-//         readMe += `# ${data.name}\n`;
-//         readMe += `![${data.name}](${data.avatar_url})\n`;
-//         readMe += `#### URL: [${data.html_url}](${data.html_url})\n`;
-//         readMe += `#### Github Username: ${data.login}\n`;
-//         // readMe += `#### Email: ${email}\n`;
-//         readMe += `#### Github Repositories:\n`;
-//
-//         fs.writeFile("README.md", readMe, err => {
-//             if (err) {
-//                 console.log(err);
-//             }
-//         })
-//
-//         console.log(readMe);
-//     })
-
-
-
-
-
-// const { data } = await axios.get(`https://api.github.com/users/${username}`);
-
-// const { data } = await axios.get(`https://api.github.com/users/${username}/events/public`);
-//
-// const repos = [];
-// let name;
-// let avatarUrl;
-// let email;
-// let readMe = "";
-//
-// data.forEach((element) => {
-//     let { actor, repo, payload } = element;
-//     if (!name) name = payload.commits[0].author.name;
-//     if (!email) email = payload.commits[0].author.email;
-//     if (!avatarUrl) avatarUrl = actor.avatar_url;
-//     let repoName = repo.name.split("/").pop();
-//     if (!repos.includes(repoName)) { repos.push(repoName) }
-//
-// });
-//
-// readMe += `# ${name}\n`;
-// readMe += `![${username}](${avatarUrl})\n`;
-// readMe += `#### Github Username: ${username}\n`;
-// readMe += `#### Email: ${email}\n`;
-// readMe += `#### Github Repositories:\n`;
-
-// repos.forEach(repo => {
-//     readMe += `* ${repo}\n`;
-// })
