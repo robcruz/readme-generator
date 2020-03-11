@@ -110,11 +110,13 @@ async function createReadMe() {
                 readMe += `         * Name: ${license.name}\n`;
             }
 
+            console.log('Repository: ', name);
+
             let tableOfContents = await inquirer.prompt({
                 message: "Table of Contents:",
                 name: "tableOfContents"
             });
-            readMe += `    * Table of contents: ${tableOfContents}\n`;
+            readMe += `    * Table of contents: ${ tableOfContents }\n`;
 
             let installation = await inquirer.prompt({
                 message: "Installation:",
@@ -133,38 +135,7 @@ async function createReadMe() {
                 name: "tests"
             });
             readMe += `    * Tests: ${tests}\n`;
-
-
-            // let tableOfContents = 'Table of contents';
-
-
-            // readMe += ``;
-            // readMe += ``;
-            // readMe += ``;
-            // readMe += ``;
-            // readMe += ``;
-            // readMe += ``;
-            // readMe += ``;
-            // readMe += ``;
-            // console.log('name', name);
-            // console.log('html_url', html_url);
-            // console.log('description', description);
-            // let { login, avatar_url } = owner;
-            // console.log('login', login);
-            // console.log('avatar_url', avatar_url);
         }
-
-
-        // readMe += `# ${data.name}\n`;
-        // readMe += `![${data.name}](${data.avatar_url})\n`;
-        // readMe += `#### URL: [${data.html_url}](${data.html_url})\n`;
-        // readMe += `#### Github Username: ${data.login}\n`;
-        // // readMe += `#### Email: ${email}\n`;
-        // readMe += `#### Github Repositories:\n`;
-        //
-        // addNewReadme(readMe);
-        // console.log(readMe);
-
     } catch (err) {
         console.log(err);
     } finally {
@@ -174,14 +145,6 @@ async function createReadMe() {
 
 }
 
-async function promptUser(message) {
-    let { input } = await inquirer.prompt({
-        message: message,
-        name: "input"
-    });
-
-    return input
-}
 
 function addNewReadme(str) {
     fs.writeFile("README.md", `${str}\n`, err => {
